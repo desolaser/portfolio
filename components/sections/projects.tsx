@@ -8,10 +8,12 @@ import {
   Text, 
   Flex, 
   Button,
-  AspectRatio
+  AspectRatio,
+  useColorModeValue
 } from '@chakra-ui/react'
 
 const Projects: FunctionComponent = () => {
+  const projectCardColor = useColorModeValue('gray.100', 'gray.700')
   return (
     <Box minH="50vh" textAlign="center">
       <Heading size="xl">Projects</Heading>
@@ -26,11 +28,16 @@ const Projects: FunctionComponent = () => {
       >
         {PROJECT_ITEMS.map(item => {
           return (
-            <VStack mt={{ base: 8, md: 0 }}>
+            <VStack 
+              bgColor={projectCardColor}
+              shadow="md" 
+              p={8} 
+              mt={{ base: 8, md: 0 }}
+            >
               <Heading size="md">
                 {item.name}
               </Heading>
-              <AspectRatio>
+              <AspectRatio ratio={1}>
                 <Image
                   src={item.image}
                   layout="fill"
@@ -57,7 +64,6 @@ type Project = {
   href: string,
   image: string
 }
-
 
 const PROJECT_ITEMS: Array<Project> = [
   {
