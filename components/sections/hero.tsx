@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react'
-import { Box, Center, Heading, Text, Divider } from '@chakra-ui/react'
+import { Box, Center, Heading, Text } from '@chakra-ui/react'
 
 const Hero: FunctionComponent = () => {
   return (
