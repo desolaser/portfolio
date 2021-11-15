@@ -7,7 +7,7 @@ const Layout: FunctionComponent = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Container>
+      <Container maxW="container.xl" p={[10, 20]}>
         {children}
       </Container>
       <Footer />
