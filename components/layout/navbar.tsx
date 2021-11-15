@@ -1,33 +1,37 @@
 import type { FunctionComponent } from 'react'
-import { 
-  Box, 
-  Flex, 
+import {
+  Box,
+  Flex,
+  Text,
   IconButton,
   Stack,
-  Text,
+  Collapse,
+  Icon,
+  Link,
+  Button,
   Popover,
   PopoverTrigger,
   PopoverContent,
-  Link,
-  Button,
-  Collapse,
   useColorModeValue,
+  useBreakpointValue,
   useDisclosure,
-  useBreakpointValue
+  useColorMode
 } from '@chakra-ui/react'
 import {
-  Icon,
+  MoonIcon,
+  SunIcon,
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
 
-const Navbar: FunctionComponent = () => {  
-  const { isOpen, onToggle } = useDisclosure()
+const Navbar: FunctionComponent = () => {
+  const { isOpen, onToggle } = useDisclosure()  
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    <Box>
+    <Box pos="fixed" w="full" zin={-1}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -37,8 +41,7 @@ const Navbar: FunctionComponent = () => {
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}
-      >
+        align={'center'}>
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -57,7 +60,7 @@ const Navbar: FunctionComponent = () => {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Logo
+            Felipe Olavarría
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -65,33 +68,16 @@ const Navbar: FunctionComponent = () => {
           </Flex>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}>
-          <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}>
-            Sign In
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            Sign Up
+        <Stack>
+          <Button onClick={toggleColorMode}>
+            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </Button>
         </Stack>
       </Flex>
+
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav />
+      </Collapse>
     </Box>
   )
 }
@@ -177,8 +163,21 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   )
 }
 
+const MobileNav = () => {
+  return (
+    <Stack
+      bg={useColorModeValue('white', 'gray.800')}
+      p={4}
+      display={{ md: 'none' }}>
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} {...navItem} />
+      ))}
+    </Stack>
+  )
+}
+
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const {isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
@@ -226,18 +225,6 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   )
 }
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      p={4}
-      display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  )
-}
 
 interface NavItem {
   label: string;
@@ -248,42 +235,32 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'About me',
+    href: '#about'
+  },
+  {
+    label: 'Projects',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
+        label: 'Lakehosting',
+        subLabel: 'Gatsby hosting page',
+        href: 'https://www.lakehosting.cl',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
+        label: 'Conservador de Bienes Raíces de Puerto Varas',
+        subLabel: 'Developed with Next.js and GraphQL',
+        href: 'http://www.conservadorpvaras.cl',
+      },
+      {
+        label: 'Imperio Gamers',
+        subLabel: 'E-Commerce page',
+        href: 'https://www.imperiogamers.cl',
       },
     ],
   },
   {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'Contact',
+    href: '#contact',
   },
 ]
 
