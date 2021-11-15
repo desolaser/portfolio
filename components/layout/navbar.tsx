@@ -31,7 +31,7 @@ const Navbar: FunctionComponent = () => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    <Box pos="fixed" w="full" zin={-1}>
+    <Box pos="fixed" w="full" zIndex={999}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
