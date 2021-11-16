@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { Container } from '@chakra-ui/react'
 import Head from 'next/head'
 import Hero from '../components/sections/hero'
 import About from '../components/sections/about'
@@ -13,8 +14,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <About />
-      <Projects />
+      <Container maxW="container.xl" p={[10, 20]}>
+        <About />
+        <Projects />
+      </Container>
     </>
   )
 }
