@@ -1,5 +1,6 @@
 import type { FunctionComponent } from 'react'
-import { Box, Heading, Text, HStack, Progress, Stack } from '@chakra-ui/react'
+import Image from 'next/image'
+import { Box, Heading, Text, HStack, Progress, Stack, AspectRatio, Center } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/icons'
 import { 
   SiJavascript,
@@ -25,6 +26,15 @@ const About: FunctionComponent = () => {
   return (
     <Box minH="50vh" textAlign="center" py={8}>
       <Heading size="xl">About Me</Heading>
+      <Center pt="2rem">
+        <AspectRatio w={150} ratio={1} style={{ borderRadius: 10 }}>
+          <Image
+            src="/images/profile.jpg"
+            alt="Picture of the author"
+            layout="fill"
+          />
+        </AspectRatio>
+      </Center>
       <Text pt="2rem">
         I'm a FullStack Developer with three years of experience in web development.
       </Text>
