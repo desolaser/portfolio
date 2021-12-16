@@ -51,13 +51,13 @@ const About: FunctionComponent = () => {
         <Box w="full">
           <Heading size="md" pt="2rem">Programming languages</Heading>
           {PROGRAMMING_LANGUAGE_ITEMS.map((item: DevProgressBarProps) =>
-            <DevProgressBar icon={item.icon} name={item.name} value={item.value} />
+            <DevProgressBar key={item.name} icon={item.icon} name={item.name} value={item.value} />
           )}
         </Box>
         <Box w="full">
           <Heading size="md" pt="2rem">Frameworks and libraries</Heading>
           {FRAMEWORK_ITEMS.map((item: DevProgressBarProps) =>
-            <DevProgressBar icon={item.icon} name={item.name} value={item.value} />
+            <DevProgressBar key={item.name} icon={item.icon} name={item.name} value={item.value} />
           )}
         </Box>
       </Stack>

@@ -26,9 +26,9 @@ const Projects: FunctionComponent = () => {
         justifyContent="space-between"
         mt={8}
       >
-        {PROJECT_ITEMS.map(item => {
-          return (
+        {PROJECT_ITEMS.map(item => (
             <VStack 
+              key={item.name}
               bgColor={projectCardColor}
               shadow="md" 
               p={8} 
@@ -51,8 +51,7 @@ const Projects: FunctionComponent = () => {
                 <Button colorScheme="purple">Go to Project</Button>
               </Link>
             </VStack>
-          )
-        })}
+        ))}
       </Flex>      
     </Box>
   )
