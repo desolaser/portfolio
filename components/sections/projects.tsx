@@ -11,6 +11,7 @@ import {
   AspectRatio,
   useColorModeValue
 } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
 const Projects: FunctionComponent = () => {
   const projectCardColor = useColorModeValue('gray.100', 'gray.700')
@@ -19,7 +20,7 @@ const Projects: FunctionComponent = () => {
       <Heading size="xl">Projects</Heading>
       <Text mt="1rem">
         In this section you can see some of my projects.
-      </Text>
+      </Text> 
       <Flex 
         direction={{ base: 'column', md: 'row' }}
         alignItems="center"
@@ -27,32 +28,37 @@ const Projects: FunctionComponent = () => {
         mt={8}
       >
         {PROJECT_ITEMS.map(item => (
-            <VStack 
-              key={item.name}
-              bgColor={projectCardColor}
-              shadow="md" 
-              p={8} 
-              mt={{ base: 8, md: 0 }}
+          <VStack 
+            key={item.name}
+            bgColor={projectCardColor}
+            shadow="md" 
+            p={8} 
+            mt={{ base: 8, md: 0 }}
+          >
+            <Heading size="md">
+              {item.name}
+            </Heading>
+            <AspectRatio ratio={1}>
+              <Image
+                src={item.image}
+                layout="fill"
+                alt={item.name}
+              />
+            </AspectRatio>
+            <Text>
+              {item.subLabel}
+            </Text>    
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Heading size="md">
-                {item.name}
-              </Heading>
-              <AspectRatio ratio={1}>
-                <Image
-                  src={item.image}
-                  layout="fill"
-                  alt={item.name}
-                />
-              </AspectRatio>
-              <Text>
-                {item.subLabel}
-              </Text>
               <Link href={item.href}>
                 <Button colorScheme="purple">Go to Project</Button>
               </Link>
-            </VStack>
+            </motion.div>
+          </VStack>
         ))}
-      </Flex>      
+      </Flex>
     </Box>
   )
 }
