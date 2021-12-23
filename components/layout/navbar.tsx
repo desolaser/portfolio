@@ -34,6 +34,7 @@ const Navbar: FunctionComponent = () => {
     <Box pos="fixed" w="full" zIndex={999}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
+        bgGradient={useColorModeValue('linear(to-r, white, purple.100)', 'linear(to-r, gray.800, purple.900)')} 
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
