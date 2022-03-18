@@ -90,7 +90,7 @@ const PROGRAMMING_LANGUAGE_ITEMS: Array<DevProgressBarProps> = [
   {
     icon: SiCsharp,
     name: 'C#',
-    value: 80
+    value: 100
   },
   {
     icon: SiCplusplus,
@@ -100,12 +100,12 @@ const PROGRAMMING_LANGUAGE_ITEMS: Array<DevProgressBarProps> = [
   {
     icon: SiDotnet,
     name: '.NET',
-    value: 80
+    value: 100
   },
   {
     icon: SiTypescript,
     name: 'Typescript',
-    value: 50
+    value: 60
   },
   {
     icon: SiHtml5,
@@ -148,7 +148,7 @@ const FRAMEWORK_ITEMS: Array<DevProgressBarProps> = [
   {
     icon: SiGraphql,
     name: 'GraphQL',
-    value: 80
+    value: 90
   },
   {
     icon: SiApollographql,
@@ -163,7 +163,7 @@ const FRAMEWORK_ITEMS: Array<DevProgressBarProps> = [
   {
     icon: SiDjango,
     name: 'Django',
-    value: 50
+    value: 30
   },
 ];
 
