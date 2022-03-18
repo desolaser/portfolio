@@ -3,15 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { 
   Box, 
-  VStack, 
+  Stack, 
   Heading, 
   Text, 
-  Flex, 
   Button,
   AspectRatio,
   useColorModeValue
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+
+const AnimatedBox = motion(Box)
 
 const Projects: FunctionComponent = () => {
   const projectCardColor = useColorModeValue('gray.100', 'gray.700')
@@ -21,23 +22,23 @@ const Projects: FunctionComponent = () => {
       <Text mt="1rem">
         In this section you can see some of my projects.
       </Text> 
-      <Flex 
-        direction={{ base: 'column', md: 'row' }}
-        alignItems="center"
-        justifyContent="space-between"
-        mt={8}
+      <Stack 
+        mt={4}
+        direction={{ base: "column", md: "row" }}
+        spacing={8}
+        alignItems={"stretch"}
       >
         {PROJECT_ITEMS.map(item => (
-          <VStack 
-            key={item.name}
+          <Box 
             bgColor={projectCardColor}
             shadow="md" 
             p={8} 
-            mt={{ base: 8, md: 0 }}
-          >
-            <Heading size="md">
+            key={item.name}
+            w={"full"}
+            h={"full"}>
+            <Heading size="md" p={2}>
               {item.name}
-            </Heading>
+            </Heading>            
             <AspectRatio ratio={1}>
               <Image
                 src={item.image}
@@ -45,20 +46,21 @@ const Projects: FunctionComponent = () => {
                 alt={item.name}
               />
             </AspectRatio>
-            <Text>
+            <Text p={2}>
               {item.subLabel}
-            </Text>    
-            <motion.div
+            </Text>
+            <AnimatedBox
+              m={2}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <Link href={item.href}>
                 <Button colorScheme="purple">Go to Project</Button>
               </Link>
-            </motion.div>
-          </VStack>
+            </AnimatedBox>
+          </Box>
         ))}
-      </Flex>
+      </Stack>
     </Box>
   )
 }
