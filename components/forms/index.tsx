@@ -16,7 +16,6 @@ interface FormInputProps extends InputProps {
   type: string;
   error?: string;
   helperText?: string;
-  id?: string;
 };
 
 const FormInput = ({ 
@@ -28,14 +27,12 @@ const FormInput = ({
   handleChange,
   type,
   helperText,
-  id,
   ...rest
 }: FormInputProps) => (
-  <FormControl>
-    <FormLabel htmlFor={id}>{title}</FormLabel>
+  <FormControl isInvalid={typeof error != "undefined"}>
+    <FormLabel htmlFor={name}>{title}</FormLabel>
     <Input 
       name={name}
-      id={id} 
       type={type}
       value={value}
       placeholder={placeholder}
