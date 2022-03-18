@@ -35,6 +35,7 @@ const Contact: React.FC = () => {
           bgColor={projectCardColor}
           shadow="md" 
           p={8} 
+          spacing={4}
           mt={{ base: 8, md: 0 }}
         >
           <FormInput
