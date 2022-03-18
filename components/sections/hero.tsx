@@ -34,7 +34,7 @@ const Hero: FunctionComponent = () => {
 
           <Box my="2rem">
             <Text fontSize={{ base: 'md', lg: 'lg' }} color="white">
-              We can make something great.
+              Fullstack Developer
             </Text>
             <motion.div
               whileHover={{ scale: 1.1 }}
