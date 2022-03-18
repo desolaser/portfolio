@@ -7,36 +7,43 @@ import {
 } from '@chakra-ui/react';
 
 interface FormInputProps {
-  id: string;
+  name: string;
   title: string;
   value: string;
-  error: object;
   placeholder: string;
-  handleChange: VoidFunction;
+  handleChange: (e: React.ChangeEvent<any>) => void;
   type: string;
+  error?: string;
+  helperText?: string;
+  id?: string;
 };
 
 const FormInput = ({ 
-  id,
+  name,
   title,
   value,
   error,
   placeholder,
   handleChange,
-  type
+  type,
+  helperText,
+  id,
+  ...rest
 }: FormInputProps) => (
   <FormControl>
     <FormLabel htmlFor={id}>{title}</FormLabel>
     <Input 
+      name={name}
       id={id} 
       type={type}
       value={value}
       placeholder={placeholder}
       handleChange={handleChange}
+      {...rest}
     />
     {!error ? (
       <FormHelperText>
-        Enter the email you&apos;d like to receive the newsletter on.
+        {helperText}
       </FormHelperText>
     ) : (
       <FormErrorMessage>{error}</FormErrorMessage>
