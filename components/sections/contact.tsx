@@ -11,10 +11,10 @@ import { FormInput } from '../forms';
 const Contact: FunctionComponent = () => {
   const projectCardColor = useColorModeValue('gray.100', 'gray.700');
   return (
-    <Box minH="50vh" textAlign="center">
+    <Box minH="50vh" mt={8} textAlign="center">
       <Heading size="xl">Contact</Heading>
-      <Text mt="1rem">
-        Send me a message with the details of your project or job.
+      <Text marginY={4}>
+        Send me a message if you want to build a great project.
       </Text>
       <VStack
         bgColor={projectCardColor}
@@ -25,7 +25,7 @@ const Contact: FunctionComponent = () => {
         <FormInput
           id="name"
           title="Name"
-          value="0"
+          value=""
           placeholder="Insert your name"
           handleChange={() => {}}
           error={{}}
@@ -34,7 +34,7 @@ const Contact: FunctionComponent = () => {
         <FormInput
           id="email"
           title="Email"
-          value="0"
+          value=""
           placeholder="Insert the email"
           handleChange={() => {}}
           error={{}}
@@ -43,7 +43,7 @@ const Contact: FunctionComponent = () => {
         <FormInput
           id="message"
           title="Message"
-          value="0"
+          value=""
           placeholder="Insert the message"
           handleChange={() => {}}
           error={{}}
