@@ -1,6 +1,6 @@
-import type { FunctionComponent } from 'react'
-import Navbar from './navbar'
-import Footer from './footer'
+import type { FunctionComponent } from 'react';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const Layout: FunctionComponent = ({ children }) => {
   return (
@@ -9,7 +9,7 @@ const Layout: FunctionComponent = ({ children }) => {
       {children}
       <Footer />
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

@@ -1,21 +1,21 @@
-import type { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { 
   Box, 
   Center, 
   Heading, 
   Text, 
   Button
-} from '@chakra-ui/react'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+} from '@chakra-ui/react';
 
 const variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
-}
+};
 
 const Hero: FunctionComponent = () => {
-  const x = useMotionValue(0)
-  const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0])
+  const x = useMotionValue(0);
+  const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0]);
   
   return (
     <Center h="100vh" w="full" bgImage="url('/images/hero.jpg')">
@@ -48,7 +48,7 @@ const Hero: FunctionComponent = () => {
         </Box>
       </motion.div>      
     </Center>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

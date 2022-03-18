@@ -1,15 +1,15 @@
-import type { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react';
 import { 
   Box, 
   VStack, 
   Heading, 
   Text, 
   useColorModeValue
-} from '@chakra-ui/react'
-import { FormInput } from '../forms'
+} from '@chakra-ui/react';
+import { FormInput } from '../forms';
 
 const Contact: FunctionComponent = () => {
-  const projectCardColor = useColorModeValue('gray.100', 'gray.700')
+  const projectCardColor = useColorModeValue('gray.100', 'gray.700');
   return (
     <Box minH="50vh" textAlign="center">
       <Heading size="xl">Contact</Heading>
@@ -51,7 +51,7 @@ const Contact: FunctionComponent = () => {
         />
       </VStack>
     </Box>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

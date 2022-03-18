@@ -1,6 +1,6 @@
-import type { FunctionComponent } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import type { FunctionComponent } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { 
   Box, 
   Stack, 
@@ -10,12 +10,12 @@ import {
   AspectRatio,
   useColorModeValue
 } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
-const AnimatedBox = motion(Box)
+const AnimatedBox = motion(Box);
 
 const Projects: FunctionComponent = () => {
-  const projectCardColor = useColorModeValue('gray.100', 'gray.700')
+  const projectCardColor = useColorModeValue('gray.100', 'gray.700');
   return (
     <Box minH="50vh" textAlign="center">
       <Heading size="xl">Projects</Heading>
@@ -62,7 +62,7 @@ const Projects: FunctionComponent = () => {
         ))}
       </Stack>
     </Box>
-  )
+  );
 }
 
 type Project = {
@@ -70,7 +70,7 @@ type Project = {
   subLabel: string,
   href: string,
   image: string
-}
+};
 
 const PROJECT_ITEMS: Array<Project> = [
   {
@@ -91,7 +91,7 @@ const PROJECT_ITEMS: Array<Project> = [
     href: 'https://www.imperiogamers.cl',
     image: '/images/projects/imperio-gamers.jpg'
   },
-]
+];
 
 
-export default Projects
+export default Projects;

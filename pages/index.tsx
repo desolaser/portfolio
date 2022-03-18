@@ -1,9 +1,10 @@
-import type { NextPage } from 'next'
-import { Container } from '@chakra-ui/react'
-import Head from 'next/head'
-import Hero from '../components/sections/hero'
-import About from '../components/sections/about'
-import Projects from '../components/sections/projects'
+import type { NextPage } from 'next';
+import { Container } from '@chakra-ui/react';
+import Head from 'next/head';
+import Hero from '../components/sections/hero';
+import About from '../components/sections/about';
+import Projects from '../components/sections/projects';
+import Contact from '../components/sections/contact';
 
 const Home: NextPage = () => {
   return (
@@ -17,9 +18,10 @@ const Home: NextPage = () => {
       <Container maxW="container.xl" p={[10, 20]}>
         <About />
         <Projects />
+        <Contact />
       </Container>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

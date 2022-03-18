@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react';
 import {
   Box,
   Flex,
@@ -16,7 +16,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   useColorMode
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import {
   MoonIcon,
   SunIcon,
@@ -24,11 +24,11 @@ import {
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
-} from '@chakra-ui/icons'
+} from '@chakra-ui/icons';
 
 const Navbar: FunctionComponent = () => {
-  const { isOpen, onToggle } = useDisclosure()  
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box pos="fixed" w="full" zIndex={999}>
@@ -80,7 +80,7 @@ const Navbar: FunctionComponent = () => {
         <MobileNav />
       </Collapse>
     </Box>
-  )
+  );
 }
 
 const DesktopNav = () => {
@@ -127,7 +127,7 @@ const DesktopNav = () => {
         </Box>
       ))}
     </Stack>
-  )
+  );
 }
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
@@ -161,7 +161,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
         </Flex>
       </Stack>
     </Link>
-  )
+  );
 }
 
 const MobileNav = () => {
@@ -174,7 +174,7 @@ const MobileNav = () => {
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
-  )
+  );
 }
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
@@ -224,7 +224,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         </Stack>
       </Collapse>
     </Stack>
-  )
+  );
 }
 
 interface NavItem {
@@ -232,7 +232,7 @@ interface NavItem {
   subLabel?: string;
   children?: Array<NavItem>;
   href?: string;
-}
+};
 
 const NAV_ITEMS: Array<NavItem> = [
   {
@@ -263,6 +263,6 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Contact',
     href: '#contact',
   },
-]
+];
 
-export default Navbar
+export default Navbar;

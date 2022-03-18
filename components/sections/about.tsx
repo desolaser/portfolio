@@ -1,7 +1,16 @@
-import type { FunctionComponent } from 'react'
-import Image from 'next/image'
-import { Box, Heading, Text, HStack, Progress, Stack, AspectRatio, Center } from '@chakra-ui/react'
-import { Icon } from '@chakra-ui/icons'
+import type { FunctionComponent } from 'react';
+import Image from 'next/image';
+import { 
+  Box, 
+  Heading, 
+  Text, 
+  HStack, 
+  Progress, 
+  Stack, 
+  AspectRatio, 
+  Center 
+} from '@chakra-ui/react';
+import { Icon } from '@chakra-ui/icons';
 import { 
   SiJavascript,
   SiPython,
@@ -20,7 +29,7 @@ import {
   SiApollographql,
   SiLaravel,
   SiDjango
-} from 'react-icons/si'
+} from 'react-icons/si';
 
 const About: FunctionComponent = () => {
   return (
@@ -36,14 +45,10 @@ const About: FunctionComponent = () => {
         </AspectRatio>
       </Center>
       <Text pt="2rem">
-        I'm a FullStack Developer with three years of experience in web development.
+        Im a FullStack Developer with three years of experience in web development.
       </Text>
       <Text pt=".5rem">
-        In my free time i like to learn about new web development stuff, besides
-        playing guitar and drawing.        
-      </Text>
-      <Text pt=".5rem">
-        Good team player, with six months of experience as project manager and working
+        Good team player, with one year of experience as project manager and working
         with Kanban.
       </Text>
       <Heading size="xl" pt="2rem">Skills</Heading>
@@ -62,14 +67,14 @@ const About: FunctionComponent = () => {
         </Box>
       </Stack>
     </Box>
-  )
+  );
 }
 
 type DevProgressBarProps = {
   icon: any,
   name: string,
   value: number
-}
+};
 
 const PROGRAMMING_LANGUAGE_ITEMS: Array<DevProgressBarProps> = [
   {
@@ -117,7 +122,7 @@ const PROGRAMMING_LANGUAGE_ITEMS: Array<DevProgressBarProps> = [
     name: 'CSS3',
     value: 80
   },
-]
+];
 
 const FRAMEWORK_ITEMS: Array<DevProgressBarProps> = [
   {
@@ -160,7 +165,7 @@ const FRAMEWORK_ITEMS: Array<DevProgressBarProps> = [
     name: 'Django',
     value: 50
   },
-]
+];
 
 const DevProgressBar: FunctionComponent<DevProgressBarProps> = (props: DevProgressBarProps) => {
   return (
@@ -171,7 +176,7 @@ const DevProgressBar: FunctionComponent<DevProgressBarProps> = (props: DevProgre
       </HStack> 
       <Progress bg={'gray.300'} value={props.value} />
     </Box>
-  )
+  );
 }
 
-export default About
+export default About;

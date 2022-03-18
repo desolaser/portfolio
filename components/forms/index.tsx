@@ -4,7 +4,7 @@ import {
   FormHelperText,
   Input,
   FormErrorMessage
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
 interface FormInputProps {
   id: string;
@@ -14,7 +14,7 @@ interface FormInputProps {
   placeholder: string;
   handleChange: VoidFunction;
   type: string;
-}
+};
 
 const FormInput = ({ 
   id,
@@ -36,14 +36,14 @@ const FormInput = ({
     />
     {!error ? (
       <FormHelperText>
-        Enter the email you'd like to receive the newsletter on.
+        Enter the email you&apos;d like to receive the newsletter on.
       </FormHelperText>
     ) : (
       <FormErrorMessage>{error}</FormErrorMessage>
     )}
   </FormControl>
-)
+);
 
 export {
   FormInput
-}
+};
