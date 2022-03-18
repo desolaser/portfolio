@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
           />
           <Button
             colorScheme="purple"
-            loading={loading}
+            isLoading={loading}
           >
             Agregar
           </Button>
