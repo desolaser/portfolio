@@ -72,7 +72,9 @@ const Contact: React.FC = () => {
             type="text"
           />
           <Button
-            colorScheme="purple"
+            type="submit"
+            colorScheme="purple" 
+            isFullWidth
             isLoading={loading}
           >
             Agregar
