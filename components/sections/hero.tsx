@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import React from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { 
   Box, 
@@ -13,7 +13,7 @@ const variants = {
   visible: { opacity: 1 },
 };
 
-const Hero: FunctionComponent = () => {
+const Hero: React.FC = () => {
   const x = useMotionValue(0);
   const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0]);
   

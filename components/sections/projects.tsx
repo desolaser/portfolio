@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 
 const AnimatedBox = motion(Box);
 
-const Projects: FunctionComponent = () => {
+const Projects: React.FC = () => {
   const projectCardColor = useColorModeValue('gray.100', 'gray.700');
   return (
     <Box minH="50vh" textAlign="center">
@@ -28,7 +28,7 @@ const Projects: FunctionComponent = () => {
         spacing={8}
         alignItems={"stretch"}
       >
-        {PROJECT_ITEMS.map(item => (
+        {PROJECT_ITEMS.map((item: Project) => (
           <Box 
             bgColor={projectCardColor}
             shadow="md" 
@@ -70,7 +70,7 @@ type Project = {
   subLabel: string,
   href: string,
   image: string
-};
+}
 
 const PROJECT_ITEMS: Array<Project> = [
   {
@@ -92,6 +92,5 @@ const PROJECT_ITEMS: Array<Project> = [
     image: '/images/projects/imperio-gamers.jpg'
   },
 ];
-
 
 export default Projects;
