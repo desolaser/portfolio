@@ -3,10 +3,11 @@ import {
   FormLabel,
   FormHelperText,
   Input,
+  InputProps,
   FormErrorMessage
 } from '@chakra-ui/react';
 
-interface FormInputProps {
+interface FormInputProps extends InputProps {
   name: string;
   title: string;
   value: string;
@@ -38,7 +39,7 @@ const FormInput = ({
       type={type}
       value={value}
       placeholder={placeholder}
-      handleChange={handleChange}
+      onChange={handleChange}
       {...rest}
     />
     {!error ? (
