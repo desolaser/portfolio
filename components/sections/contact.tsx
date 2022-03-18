@@ -20,8 +20,10 @@ const Contact: React.FC = () => {
     handleChange,
     handleSubmit
   } = useContact();
-
   const projectCardColor = useColorModeValue('gray.100', 'gray.700');
+  const inputColor = useColorModeValue('white', 'gray.800');
+  const inputTextColor = useColorModeValue('gray.600', 'gray.400');
+
   return (
     <Box minH="50vh" mt={8} textAlign="center">
       <Heading size="xl">Contact</Heading>
@@ -36,6 +38,8 @@ const Contact: React.FC = () => {
           mt={{ base: 8, md: 0 }}
         >
           <FormInput
+            bgColor={inputColor}
+            _placeholder={{ color: inputTextColor }}
             name="name"
             title="Name"
             value={values.name}
@@ -45,6 +49,8 @@ const Contact: React.FC = () => {
             type="text"
           />
           <FormInput
+            bgColor={inputColor}
+            _placeholder={{ color: inputTextColor }}
             name="email"
             title="Email"
             value={values.email}
@@ -54,6 +60,8 @@ const Contact: React.FC = () => {
             type="text"
           />
           <FormInput
+            bgColor={inputColor}
+            _placeholder={{ color: inputTextColor }}
             name="message"
             title="Message"
             value={values.message}
@@ -63,7 +71,7 @@ const Contact: React.FC = () => {
             type="text"
           />
           <Button
-            colorScheme="violet"
+            colorScheme="purple"
             loading={loading}
           >
             Agregar
