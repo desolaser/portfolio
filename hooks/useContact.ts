@@ -13,15 +13,21 @@ const ContactSchema = Yup.object().shape({
     .required('Required'),
 });
 
+type ContactFormValues = {
+  name: string,
+  email: string,
+  message: string
+}
+
 const useContact = () => {
-  const [submitError, setSubmitError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [ submitError, setSubmitError ] = useState<string>("");
+  const [ loading, setLoading ] = useState<boolean>(false);
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: '',
       email: '',
       message: ''
-    },
+    } as ContactFormValues,
     validationSchema: ContactSchema,
     onSubmit: (values) => {
       setLoading(true);
