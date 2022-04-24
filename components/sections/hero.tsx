@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ executeScroll }: HeroProps) => {
         <Box textAlign="center">
           <Heading size="2xl" color="white">Felipe Olavarría</Heading>
           <motion.div drag="x" style={{ x, opacity }}>
-            <Text color={'purple.200'} fontSize="1.5rem" my=".5rem">
+            <Text color={'blue.200'} fontSize="1.5rem" my=".5rem">
               Software Engineer
             </Text>
           </motion.div>
