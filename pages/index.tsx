@@ -8,9 +8,13 @@ import Projects from '../components/sections/projects';
 import Contact from '../components/sections/contact';
 
 const Home: NextPage = () => {
-  const contactRef = useRef(null)
+  const contactRef = useRef<HTMLDivElement>(null)
 
-  const executeScroll = () => contactRef.current.scrollIntoView()    
+  const executeScroll = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView();
+    }
+  }
   // run this function from an event handler or an effect to execute scroll 
 
   return (
