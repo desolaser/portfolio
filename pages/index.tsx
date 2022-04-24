@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { useRef } from 'react';
 import { Container } from '@chakra-ui/react';
 import Head from 'next/head';
 import Hero from '../components/sections/hero';
@@ -7,6 +8,11 @@ import Projects from '../components/sections/projects';
 import Contact from '../components/sections/contact';
 
 const Home: NextPage = () => {
+  const contactRef = useRef(null)
+
+  const executeScroll = () => contactRef.current.scrollIntoView()    
+  // run this function from an event handler or an effect to execute scroll 
+
   return (
     <>
       <Head>
@@ -14,11 +20,11 @@ const Home: NextPage = () => {
         <meta name="description" content="Felipe Olavarría's dev portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
+      <Hero executeScroll={executeScroll} />
       <Container maxW="container.xl" p={[10, 20]}>
         <About />
         <Projects />
-        <Contact />
+        <Contact contactRef={contactRef} />
       </Container>
     </>
   );

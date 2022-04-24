@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import { 
   Box, 
   Button,
@@ -11,7 +11,11 @@ import { FormInput } from '../forms';
 import useContact from '../../hooks/useContact';
 import Error from '../../components/elements/error';
 
-const Contact: React.FC = () => {
+type ContactProps = {
+  contactRef: MutableRefObject<null>
+}
+
+const Contact: React.FC<ContactProps> = ({ contactRef }) => {
   const { 
     values,
     errors,
@@ -25,7 +29,7 @@ const Contact: React.FC = () => {
   const inputTextColor = useColorModeValue('gray.600', 'gray.400');
 
   return (
-    <Box minH="50vh" mt={8} textAlign="center">
+    <Box minH="50vh" mt={8} textAlign="center" ref={contactRef}>
       <Heading size="xl">Contact</Heading>
       <Text marginY={4}>
         Send me a message if you want to build a great project.

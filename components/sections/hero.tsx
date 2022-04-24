@@ -13,7 +13,11 @@ const variants = {
   visible: { opacity: 1 },
 };
 
-const Hero: React.FC = () => {
+type HeroProps = {
+  executeScroll: () => void
+}
+
+const Hero: React.FC<HeroProps> = ({ executeScroll }: HeroProps) => {
   const x = useMotionValue(0);
   const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0]);
   
@@ -40,7 +44,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Button bgColor="purple.500" colorScheme="purple" textColor="white" my="1rem">
+              <Button onClick={executeScroll} bgColor="purple.500" colorScheme="purple" textColor="white" my="1rem">
                 Contact me
               </Button>
             </motion.div>           
