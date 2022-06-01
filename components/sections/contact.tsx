@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from 'react';
+import React, { RefObject } from 'react';
 import { 
   Box, 
   Button,
@@ -12,7 +12,7 @@ import useContact from '../../hooks/useContact';
 import Error from '../../components/elements/error';
 
 type ContactProps = {
-  contactRef: MutableRefObject<null>
+  contactRef: RefObject<HTMLDivElement>
 }
 
 const Contact: React.FC<ContactProps> = ({ contactRef }) => {
