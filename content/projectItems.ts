@@ -3,19 +3,19 @@ import Project from '../model/Project';
 const projectItems: Array<Project> = [
   {
     name: 'Lakehosting',
-    subLabel: 'Gatsby hosting page',
+    subLabel: 'Gatsby web hosting sales page',
     href: 'https://www.lakehosting.cl',
     image: '/images/projects-min/lakehosting.png'
   },
   {
     name: 'Conservador de Bienes Raíces de Puerto Varas',
-    subLabel: 'Next.js and GraphQL',
+    subLabel: 'Next.js and GraphQL made for the Real estate conservator in Puerto Varas, Chile',
     href: 'http://www.conservadorpvaras.cl',
     image: '/images/projects-min/cbrpv.png'
   },
   {
     name: 'Imperio Gamers',
-    subLabel: 'E-Commerce page',
+    subLabel: 'E-Commerce for gamers',
     href: 'https://www.imperiogamers.cl',
     image: '/images/projects-min/imperio-gamers.png'
   },
@@ -29,7 +29,7 @@ const projectItems: Array<Project> = [
     name: 'Gestion SST system',
     subLabel: 'System to help risk preventionist to make reports',
     href: 'https://www.sistema.gestionsst.cl',
-    image: '/images/projects-min/gestion-sst-sales.png'
+    image: '/images/projects-min/gestion-sst-system.png'
   },
 ];
 
