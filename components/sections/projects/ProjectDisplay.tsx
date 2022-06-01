@@ -23,9 +23,8 @@ const ProjectDisplay: React.FC<ProjectDisplayProps> = ({ project }) => {
     <Box 
       bgColor={projectCardColor}
       shadow="md"
-      w="md"
-      p={8}
-      key={project.name}
+      w="xs"
+      p={4}
     >
       <Heading size="md" p={2}>
         {project.name}

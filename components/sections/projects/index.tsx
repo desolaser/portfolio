@@ -4,6 +4,7 @@ import {
   Center,
   Heading, 
   Text,
+  Divider
 } from '@chakra-ui/react'
 import Project from '../../../model/Project';
 import projectItems from '../../../content/projectItems';
@@ -19,11 +20,13 @@ const Projects: React.FC = () => {
       <Stack
         mt={4}
         direction={{ base: "column", md: "row" }}
-        spacing={8}
+        spacing={4}
         alignItems={"stretch"}
+        justifyContent={"center"}
+        wrap={"wrap"}
       >
         {projectItems.map((project: Project) => (
-            <ProjectDisplay key={project.name} project={project} />
+          <ProjectDisplay key={project.name} project={project} />
         ))}
       </Stack>
     </VStack>
