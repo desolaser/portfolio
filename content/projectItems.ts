@@ -19,6 +19,18 @@ const projectItems: Array<Project> = [
     href: 'https://www.imperiogamers.cl',
     image: '/images/projects-min/imperio-gamers.png'
   },
+  {
+    name: 'Gestion SST',
+    subLabel: 'Gestion SST sales page',
+    href: 'https://www.gestionsst.cl',
+    image: '/images/projects-min/gestion-sst.png'
+  },
+  {
+    name: 'Gestion SST system',
+    subLabel: 'System to help risk preventionist to make reports',
+    href: 'https://www.sistema.gestionsst.cl',
+    image: '/images/projects-min/gestion-sst-sales.png'
+  },
 ];
 
 export default projectItems;
