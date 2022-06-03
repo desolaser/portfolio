@@ -24,8 +24,8 @@ const Projects: React.FC = () => {
         justify='center'
         mt={4} >
         {projectItems.map((project: Project) => (
-          <WrapItem>
-            <ProjectDisplay key={project.name} project={project} />
+          <WrapItem key={project.name} >
+            <ProjectDisplay project={project} />
           </WrapItem>
         ))}
       </Wrap>
