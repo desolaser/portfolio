@@ -25,6 +25,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import projectItems from '../../content/projectItems';
 
 const Navbar: FunctionComponent = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -237,24 +238,12 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Projects',
-    children: [
-      {
-        label: 'Lakehosting',
-        subLabel: 'Gatsby hosting page',
-        href: 'https://www.lakehosting.cl',
-      },
-      {
-        label: 'Conservador de Bienes Raíces de Puerto Varas',
-        subLabel: 'Developed with Next.js and GraphQL',
-        href: 'http://www.conservadorpvaras.cl',
-      },
-      {
-        label: 'Imperio Gamers',
-        subLabel: 'E-Commerce page',
-        href: 'https://www.imperiogamers.cl',
-      },
-    ],
-  },
+    children: projectItems.map((item: any) => ({
+      label: item.name,
+      subLabel: item.subLabel,
+      href: item.href,
+    }))
+  }
 ];
 
 export default Navbar;

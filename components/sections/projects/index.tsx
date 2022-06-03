@@ -1,10 +1,7 @@
-import { 
-  Stack, 
-  VStack, 
-  Center,
+import {
+  VStack,
   Heading, 
   Text,
-  Divider,
   Box,
   Wrap,
   WrapItem
