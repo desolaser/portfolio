@@ -1,10 +1,10 @@
-import { 
-  Stack, 
-  VStack, 
-  Center,
+import {
+  VStack,
   Heading, 
   Text,
-  Divider
+  Box,
+  Wrap,
+  WrapItem
 } from '@chakra-ui/react'
 import Project from '../../../model/Project';
 import projectItems from '../../../content/projectItems';
@@ -16,19 +16,19 @@ const Projects: React.FC = () => {
       <Heading size="xl">Projects</Heading>
       <Text mt="1rem">
         In this section you can see some of my projects.
-      </Text> 
-      <Stack
-        mt={4}
-        direction={{ base: "column", md: "row" }}
-        spacing={4}
-        alignItems={"stretch"}
-        justifyContent={"center"}
-        wrap={"wrap"}
-      >
+      </Text>
+      <Box p={4}></Box>
+      <Wrap 
+        spacing='30px' 
+        align='stretch'
+        justify='center'
+        mt={4} >
         {projectItems.map((project: Project) => (
-          <ProjectDisplay key={project.name} project={project} />
+          <WrapItem key={project.name} >
+            <ProjectDisplay project={project} />
+          </WrapItem>
         ))}
-      </Stack>
+      </Wrap>
     </VStack>
   );
 }

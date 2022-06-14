@@ -20,6 +20,12 @@ const projectItems: Array<Project> = [
     image: '/images/projects-min/imperio-gamers.png'
   },
   {
+    name: 'Imperio Gamers Sales',
+    subLabel: 'Sales system for Imperio Gamers',
+    href: 'https://imperio-gamers-ventas.vercel.app/login',
+    image: '/images/projects-min/imperio-gamers-sales.png'
+  },
+  {
     name: 'Gestion SST',
     subLabel: 'Gestion SST sales page',
     href: 'https://www.gestionsst.cl',
