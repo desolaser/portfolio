@@ -28,6 +28,7 @@ const Home: NextPage = () => {
       <Container maxW="container.xl" p={[10, 20]}>
         <About />
         <Projects />
+        <Contact contactRef={contactRef} />
       </Container>
     </>
   );
