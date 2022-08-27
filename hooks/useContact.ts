@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
+import { useToast } from '@chakra-ui/react';
+import axios from 'axios';
 import * as Yup from 'yup';
 
 const ContactSchema = Yup.object().shape({
@@ -20,6 +22,7 @@ type ContactFormValues = {
 }
 
 const useContact = () => {
+  const toast = useToast();
   const [ submitError, setSubmitError ] = useState<string>("");
   const [ loading, setLoading ] = useState<boolean>(false);
   const { values, errors, handleChange, handleSubmit } = useFormik({
@@ -29,14 +32,35 @@ const useContact = () => {
       message: ''
     } as ContactFormValues,
     validationSchema: ContactSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setLoading(true);
       try {
-        alert(JSON.stringify(values, null, 2));
-      } 
+        const response = await axios.post('/api/contact', values, {
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          },
+        });
+
+        if (response.status === 200) {
+          toast({
+            title: 'Success',
+            description: "Message has been sent!",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+      }
       catch(err: unknown) {
         const error = err as Error;
-        setSubmitError(error.message as string);
+        toast({
+          title: 'Error',
+          description: "Can't send the message due to an unexpected error",
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        });
       }
       setLoading(false);
     }
