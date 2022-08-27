@@ -7,7 +7,7 @@ import {
   Text, 
   useColorModeValue
 } from '@chakra-ui/react';
-import { FormInput } from '../forms';
+import { FormInput, FormTextArea } from '../forms';
 import useContact from '../../hooks/useContact';
 import Error from '../../components/elements/error';
 
@@ -62,7 +62,7 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
             error={errors.email}
             type="text"
           />
-          <FormInput
+          <FormTextArea
             bgColor={inputColor}
             _placeholder={{ color: inputTextColor }}
             name="message"
@@ -70,7 +70,6 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
             value={values.message}
             handleChange={handleChange}
             error={errors.message}
-            type="textarea"
           />
           <Button
             type="submit"

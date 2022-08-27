@@ -2,39 +2,35 @@ import {
   FormControl,
   FormLabel,
   FormHelperText,
-  Input,
-  InputProps,
+  Textarea,
+  TextareaProps,
   FormErrorMessage
 } from '@chakra-ui/react';
-import FormTextArea from './FormTextArea';
 
-interface FormInputProps extends InputProps {
+interface FormTextAreaProps extends TextareaProps {
   name: string;
   title: string;
   value: string;
   handleChange: (e: React.ChangeEvent<any>) => void;
-  type: string;
   placeholder?: string;
   error?: string;
   helperText?: string;
 };
 
-const FormInput = ({ 
+const FormTextArea = ({ 
   name,
   title,
   value,
   error,
   placeholder,
   handleChange,
-  type,
   helperText,
   ...rest
-}: FormInputProps) => (
+}: FormTextAreaProps) => (
   <FormControl isInvalid={typeof error != "undefined"}>
     <FormLabel htmlFor={name}>{title}</FormLabel>
-    <Input 
+    <Textarea 
       name={name}
-      type={type}
       value={value}
       placeholder={placeholder}
       onChange={handleChange}
@@ -50,7 +46,4 @@ const FormInput = ({
   </FormControl>
 );
 
-export {
-  FormInput,
-  FormTextArea
-};
+export default FormTextArea;
