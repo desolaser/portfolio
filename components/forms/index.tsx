@@ -4,6 +4,7 @@ import {
   FormHelperText,
   Input,
   InputProps,
+  Textarea,
   FormErrorMessage
 } from '@chakra-ui/react';
 
@@ -31,14 +32,25 @@ const FormInput = ({
 }: FormInputProps) => (
   <FormControl isInvalid={typeof error != "undefined"}>
     <FormLabel htmlFor={name}>{title}</FormLabel>
-    <Input 
-      name={name}
-      type={type}
-      value={value}
-      placeholder={placeholder}
-      onChange={handleChange}
-      {...rest}
-    />
+    {type == "textarea" ? (
+      <Textarea
+        name={name}
+        value={value}
+        onChange={handleChange}
+        placeholder={placeholder}
+        size='sm'
+        {...rest}
+      />
+    ) : (
+      <Input 
+        name={name}
+        type={type}
+        value={value}
+        placeholder={placeholder}
+        onChange={handleChange}
+        {...rest}
+      />
+    )}
     {!error ? (
       <FormHelperText>
         {helperText}

@@ -48,7 +48,6 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
             name="name"
             title="Name"
             value={values.name}
-            placeholder="Insert your name"
             handleChange={handleChange}
             error={errors.name}
             type="text"
@@ -59,7 +58,6 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
             name="email"
             title="Email"
             value={values.email}
-            placeholder="Insert the email"
             handleChange={handleChange}
             error={errors.email}
             type="text"
@@ -70,10 +68,9 @@ const Contact: React.FC<ContactProps> = ({ contactRef }) => {
             name="message"
             title="Message"
             value={values.message}
-            placeholder="Insert the message"
             handleChange={handleChange}
             error={errors.message}
-            type="text"
+            type="textarea"
           />
           <Button
             type="submit"
