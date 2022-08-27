@@ -12,24 +12,10 @@ import {
 } from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/icons';
 import { 
-  SiJavascript,
-  SiPython,
-  SiCsharp,
-  SiCplusplus,
-  SiDotnet,
-  SiTypescript,
-  SiHtml5,
-  SiPhp,
-  SiCss3,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiExpress,
-  SiGraphql,
-  SiApollographql,
-  SiLaravel,
-  SiDjango
-} from 'react-icons/si';
+  PROGRAMMING_LANGUAGE_ITEMS, 
+  FRAMEWORK_ITEMS 
+} from '../../content/skills';
+import Skills from '../../model/Skills';
 
 const About: FunctionComponent = () => {
   return (
@@ -55,13 +41,13 @@ const About: FunctionComponent = () => {
       <Stack direction="row" spacing={8}>
         <Box w="full">
           <Heading size="md" pt="2rem">Programming languages</Heading>
-          {PROGRAMMING_LANGUAGE_ITEMS.map((item: DevProgressBarProps) =>
+          {PROGRAMMING_LANGUAGE_ITEMS.map((item: Skills) =>
             <DevProgressBar key={item.name} icon={item.icon} name={item.name} value={item.value} />
           )}
         </Box>
         <Box w="full">
           <Heading size="md" pt="2rem">Frameworks and libraries</Heading>
-          {FRAMEWORK_ITEMS.map((item: DevProgressBarProps) =>
+          {FRAMEWORK_ITEMS.map((item: Skills) =>
             <DevProgressBar key={item.name} icon={item.icon} name={item.name} value={item.value} />
           )}
         </Box>
@@ -70,104 +56,7 @@ const About: FunctionComponent = () => {
   );
 }
 
-type DevProgressBarProps = {
-  icon: any,
-  name: string,
-  value: number
-};
-
-const PROGRAMMING_LANGUAGE_ITEMS: Array<DevProgressBarProps> = [
-  {
-    icon: SiJavascript,
-    name: 'Javascript',
-    value: 100
-  },
-  {
-    icon: SiPython,
-    name: 'Python',
-    value: 100
-  },
-  {
-    icon: SiCsharp,
-    name: 'C#',
-    value: 100
-  },
-  {
-    icon: SiCplusplus,
-    name: 'C++',
-    value: 60
-  },
-  {
-    icon: SiDotnet,
-    name: '.NET',
-    value: 100
-  },
-  {
-    icon: SiTypescript,
-    name: 'Typescript',
-    value: 60
-  },
-  {
-    icon: SiHtml5,
-    name: 'HTML5',
-    value: 100
-  },
-  {
-    icon: SiPhp,
-    name: 'pHp',
-    value: 100
-  },
-  {
-    icon: SiCss3,
-    name: 'CSS3',
-    value: 80
-  },
-];
-
-const FRAMEWORK_ITEMS: Array<DevProgressBarProps> = [
-  {
-    icon: SiReact,
-    name: 'React',
-    value: 100
-  },
-  {
-    icon: SiNextdotjs,
-    name: 'Next.js',
-    value: 100
-  },
-  {
-    icon: SiNodedotjs,
-    name: 'Node.js',
-    value: 60
-  },
-  {
-    icon: SiExpress,
-    name: 'Express',
-    value: 60
-  },
-  {
-    icon: SiGraphql,
-    name: 'GraphQL',
-    value: 90
-  },
-  {
-    icon: SiApollographql,
-    name: 'Apollo',
-    value: 80
-  },
-  {
-    icon: SiLaravel,
-    name: 'Laravel',
-    value: 90
-  },
-  {
-    icon: SiDjango,
-    name: 'Django',
-    value: 30
-  },
-];
-
-const DevProgressBar: FunctionComponent<DevProgressBarProps> = (props: DevProgressBarProps) => {
+const DevProgressBar: FunctionComponent<Skills> = (props: Skills) => {
   return (
     <Box pt={4}>
       <HStack>
