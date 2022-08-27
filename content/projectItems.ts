@@ -37,6 +37,12 @@ const projectItems: Array<Project> = [
     href: 'https://www.sistema.gestionsst.cl',
     image: '/images/projects-min/gestion-sst-system.png'
   },
+  {
+    name: 'Cuponatic',
+    subLabel: 'E-Commerce in next.js which makes easy to get discounts and promotions',
+    href: 'https://www.cuponatic.com',
+    image: '/images/projects-min/cuponatic.png'
+  },
 ];
 
 export default projectItems;
