@@ -10,7 +10,7 @@ const projectItems: Array<Project> = [
   {
     name: 'Conservador de Bienes Raíces de Puerto Varas',
     subLabel: 'Next.js and GraphQL made for the Real estate conservator in Puerto Varas, Chile',
-    href: 'http://www.conservadorpvaras.cl',
+    href: 'https://www.conservadorpvaras.cl',
     image: '/images/projects-min/cbrpv.png'
   },
   {
