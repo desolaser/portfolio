@@ -39,9 +39,15 @@ const projectItems: Array<Project> = [
   },
   {
     name: 'Cuponatic',
-    subLabel: 'E-Commerce in next.js which makes easy to get discounts and promotions',
+    subLabel: 'Symfony website that sells coupons',
     href: 'https://www.cuponatic.com',
     image: '/images/projects-min/cuponatic.png'
+  },
+  {
+    name: 'Cuponatic Grow',
+    subLabel: 'Next.js platform for companies to improve their marketing and operations',
+    href: 'https://comercio.cuponatic.com',
+    image: '/images/projects-min/cuponatic-grow.png'
   },
 ];
 

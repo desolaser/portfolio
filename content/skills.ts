@@ -15,7 +15,13 @@ import {
   SiGraphql,
   SiApollographql,
   SiLaravel,
-  SiDjango
+  SiDjango,
+  SiSymfony,
+  SiNestjs,
+  SiAmazonaws,
+  SiVercel,
+  SiGooglecloud,
+  SiMicrosoftazure
 } from 'react-icons/si';
 
 const PROGRAMMING_LANGUAGE_ITEMS: Array<Skills> = [
@@ -107,9 +113,43 @@ const FRAMEWORK_ITEMS: Array<Skills> = [
     name: 'Django',
     value: 30
   },
+  {
+    icon: SiSymfony,
+    name: 'Symfony',
+    value: 30
+  },
+  {
+    icon: SiNestjs,
+    name: 'Nest.js',
+    value: 80     
+  }
+];
+
+const CLOUD_TECHNOLOGIES: Array<Skills> = [
+  {
+    icon: SiAmazonaws,
+    name: 'AWS',
+    value: 100
+  },
+  {
+    icon: SiVercel,
+    name: 'Vercel',
+    value: 100
+  },
+  {
+    icon: SiGooglecloud,
+    name: 'GCP',
+    value: 50
+  },
+  {
+    icon: SiMicrosoftazure,
+    name: 'Microsoft Azure',
+    value: 40
+  },
 ];
 
 export {
   PROGRAMMING_LANGUAGE_ITEMS,
-  FRAMEWORK_ITEMS
+  FRAMEWORK_ITEMS,
+  CLOUD_TECHNOLOGIES
 }

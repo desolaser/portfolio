@@ -32,13 +32,13 @@ const Hero: React.FC<HeroProps> = ({ executeScroll }: HeroProps) => {
           <Heading size="2xl" color="white">Felipe Olavarría</Heading>
           <motion.div drag="x" style={{ x, opacity }}>
             <Text color={'blue.200'} fontSize="1.5rem" my=".5rem">
-              Software Engineer
+             Chief Technology Officer in Cuponatic
             </Text>
           </motion.div>
 
           <Box my="2rem">
             <Text fontSize={{ base: 'md', lg: 'lg' }} color="white">
-              Fullstack Developer
+              Senior Fullstack Developer and Software Engineer
             </Text>
             <motion.div
               whileHover={{ scale: 1.1 }}

@@ -13,7 +13,8 @@ import {
 import { Icon } from '@chakra-ui/icons';
 import { 
   PROGRAMMING_LANGUAGE_ITEMS, 
-  FRAMEWORK_ITEMS 
+  FRAMEWORK_ITEMS,
+  CLOUD_TECHNOLOGIES
 } from '../../content/skills';
 import Skills from '../../model/Skills';
 
@@ -31,11 +32,15 @@ const About: FunctionComponent = () => {
         </AspectRatio>
       </Center>
       <Text pt="2rem">
-        Im a FullStack Developer with three years of experience in web development.
+        {`I'm a Senior FullStack Developer and a Software Engineer with more than eight years of experience in the industry. 
+        Actually I'm in charge of the IT Department in Cuponatic as CTO.`}
       </Text>
       <Text pt=".5rem">
-        Good team player, with one year of experience as project manager and working
-        with Kanban.
+        With the abilities to lead a team to work together to meet the objectives of the company, manage tasks, managing new features and mentoring
+        new members of the team and Junior Developers.
+      </Text>
+      <Text pt=".5rem">
+        I can make an entire project from scratch using all the necessary technologies required. Like AWS, Vercel or Heroku. For the da
       </Text>
       <Heading size="xl" pt="2rem">Skills</Heading>
       <Stack direction="row" spacing={8}>
@@ -48,6 +53,12 @@ const About: FunctionComponent = () => {
         <Box w="full">
           <Heading size="md" pt="2rem">Frameworks and libraries</Heading>
           {FRAMEWORK_ITEMS.map((item: Skills) =>
+            <DevProgressBar key={item.name} icon={item.icon} name={item.name} value={item.value} />
+          )}
+        </Box>
+        <Box w="full">
+          <Heading size="md" pt="2rem">Cloud technologies</Heading>
+          {CLOUD_TECHNOLOGIES.map((item: Skills) =>
             <DevProgressBar key={item.name} icon={item.icon} name={item.name} value={item.value} />
           )}
         </Box>
